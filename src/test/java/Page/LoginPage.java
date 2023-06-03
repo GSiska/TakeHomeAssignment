@@ -10,6 +10,7 @@ import org.openqa.selenium.support.pagefactory.FieldDecorator;
 import org.picocontainer.behaviors.FieldDecorated;
 
 import java.lang.reflect.Field;
+import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
 
@@ -52,5 +53,6 @@ public class LoginPage {
     }
 
     public void userIsAtLoginPage() {webDriverManager.getDriver().get(websiteLink);
+        webDriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }
