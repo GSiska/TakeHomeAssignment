@@ -42,4 +42,12 @@ public class ShoppingCartStep {
         Assert.assertTrue(shoppingCartPage.selectedProductNameText().equals(Credential.MOSTEXPENSIVEPRODUCTNAME.getCredential()) && shoppingCartPage.selectedProductPriceText().equals(Credential.MOSTEXPENSIVEPRODUCTPRICE.getCredential()
                 ), "The selected product does not match!" );
     }
+
+    public void userClicksOnAddToCartButton() {
+        shoppingCartPage.userClicksOnAddToCartButton();
+    }
+
+    public void removeButtonAppears() {
+        shoppingCartPage.removeButtonAppears();
+    }
 }

@@ -29,6 +29,12 @@ public class ShoppingCartPage extends LoginPage{
     @FindBy(xpath = "//div[@class='inventory_details_price']")
     public WebElement selectedProductPrice;
 
+    @FindBy(xpath = "//button[@name='add-to-cart-sauce-labs-fleece-jacket']")
+    public WebElement addToCartButton;
+
+    @FindBy(xpath = "//button[@name='remove-sauce-labs-fleece-jacket']")
+    public WebElement removeButton;
+
     public void clickOnProductFilter() {
         productFilter.click();
     }
@@ -51,5 +57,13 @@ public class ShoppingCartPage extends LoginPage{
 
     public String selectedProductPriceText() {
         return selectedProductPrice.getText();
+    }
+
+    public void userClicksOnAddToCartButton() {
+        addToCartButton.click();
+    }
+
+    public boolean removeButtonAppears() {
+        return removeButton.isDisplayed();
     }
 }

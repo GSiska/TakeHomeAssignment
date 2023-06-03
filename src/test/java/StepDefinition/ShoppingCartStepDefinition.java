@@ -38,4 +38,13 @@ public class ShoppingCartStepDefinition {
         shoppingCartStep.userIsDirectedToSelectedProductPage();
     }
 
+    @When("user clicks on add to cart button")
+    public void userClicksOnAddToCartButton() {
+        shoppingCartStep.userClicksOnAddToCartButton();
+    }
+
+    @Then("remove button appears")
+    public void removeButtonAppears() {
+        shoppingCartStep.removeButtonAppears();
+    }
 }
