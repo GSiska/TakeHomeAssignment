@@ -1,9 +1,11 @@
 package Page;
 
+import org.openqa.selenium.Credentials;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import Enum.Credential;
 
 public class LoginPage {
 
@@ -23,10 +25,10 @@ public class LoginPage {
     public WebElement loginSubmitButton;
 
     public void inputLoginUserName() {
-        loginUserName.sendKeys("standard_user");
+        loginUserName.sendKeys(Credential.USERNAME.getCredential());
     }
 
     public void inputloginPassword() {
-        loginPassword.sendKeys("secret_sauce");
+        loginPassword.sendKeys(Credential.PASSWORD.getCredential());
     }
 }
