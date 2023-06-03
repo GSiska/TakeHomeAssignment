@@ -28,4 +28,14 @@ public class ShoppingCartStepDefinition {
         shoppingCartStep.theTopOfTheProductsIsTheHighestPrice();
     }
 
+    @When("user selects the first product")
+    public void userSelectsTheFirstProduct() {
+        shoppingCartStep.userSelectsTheFirstProduct();
+    }
+
+    @Then("user is directed to selected product page")
+    public void userIsDirectedToSelectedProductPage() {
+        shoppingCartStep.userIsDirectedToSelectedProductPage();
+    }
+
 }

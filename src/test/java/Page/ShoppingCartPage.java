@@ -1,6 +1,7 @@
 package Page;
 
 import Manager.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,15 @@ public class ShoppingCartPage extends LoginPage{
     @FindBy(xpath = "//div[@class='inventory_item'][1]/div[2]/div[2]/div")
     public WebElement highestProduct;
 
+    @FindBy(xpath = "//div[@class='inventory_item'][1]/div[2]/div/a/div")
+    public WebElement firstProduct;
+
+    @FindBy(xpath = "//div[@class='inventory_details_name large_size']")
+    public WebElement selectedProductName;
+
+    @FindBy(xpath = "//div[@class='inventory_details_price']")
+    public WebElement selectedProductPrice;
+
     public void clickOnProductFilter() {
         productFilter.click();
     }
@@ -29,5 +39,17 @@ public class ShoppingCartPage extends LoginPage{
 
     public String highestProductPrice() {
         return highestProduct.getText();
+    }
+
+    public void clickOnFirstProduct() {
+        firstProduct.click();
+    }
+
+    public String selectedProductNameText() {
+        return selectedProductName.getText();
+    }
+
+    public String selectedProductPriceText() {
+        return selectedProductPrice.getText();
     }
 }
