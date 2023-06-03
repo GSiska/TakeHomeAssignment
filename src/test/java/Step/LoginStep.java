@@ -8,8 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginStep {
 
-        WebDriver driver=new ChromeDriver();
+        public WebDriver driver;
         public void userIsAtLoginPage() {
+            driver = new ChromeDriver();
             driver.get("https://www.saucedemo.com/");
         }
 
