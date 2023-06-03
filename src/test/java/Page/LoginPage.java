@@ -1,16 +1,31 @@
 package Page;
 
-import org.openqa.selenium.Credentials;
+import Manager.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import Enum.Credential;
+import org.openqa.selenium.support.pagefactory.FieldDecorator;
+import org.picocontainer.behaviors.FieldDecorated;
+
+import java.lang.reflect.Field;
 
 public class LoginPage {
 
-    public LoginPage(WebDriver driver) {
-        PageFactory.initElements(driver,this);
+    WebDriverManager webDriverManager;
+
+    public LoginPage(WebDriverManager webDriverManager) {
+        this.webDriverManager=webDriverManager;
+        initElement();
+    }
+
+    private void initElement() {
+        PageFactory.initElements(getDriver(), this);
+    }
+
+    protected WebDriver getDriver() {
+        return webDriverManager.getDriver();
     }
 
     public static String websiteLink = "https://www.saucedemo.com/";
@@ -30,5 +45,12 @@ public class LoginPage {
 
     public void inputloginPassword() {
         loginPassword.sendKeys(Credential.PASSWORD.getCredential());
+    }
+
+    public void clickOnLoginSubmitButton() {
+        loginSubmitButton.click();
+    }
+
+    public void userIsAtLoginPage() {webDriverManager.getDriver().get(websiteLink);
     }
 }
