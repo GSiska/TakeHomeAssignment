@@ -7,8 +7,8 @@ import dev.failsafe.internal.util.Assert;
 
 public class LoginStep{
 
-        private final LoginPage loginPage;
-        private final HomePage homePage;
+        private LoginPage loginPage;
+        private HomePage homePage;
 
         public LoginStep(LoginPage loginPage, HomePage homePage) {
             this.loginPage = loginPage;

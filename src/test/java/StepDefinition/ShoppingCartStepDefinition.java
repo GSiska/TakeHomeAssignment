@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 
 public class ShoppingCartStepDefinition {
 
-    public ShoppingCartStep shoppingCartStep;
+    private ShoppingCartStep shoppingCartStep;
 
     public ShoppingCartStepDefinition(ShoppingCartStep shoppingCartStep) {
         this.shoppingCartStep = shoppingCartStep;

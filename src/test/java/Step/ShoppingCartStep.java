@@ -10,8 +10,8 @@ import Enum.Credential;
 
 public class ShoppingCartStep {
 
-    LoginPage loginPage;
-    ShoppingCartPage shoppingCartPage;
+    private LoginPage loginPage;
+    private ShoppingCartPage shoppingCartPage;
 
     public ShoppingCartStep(LoginPage loginPage, ShoppingCartPage shoppingCartPage){
         this.loginPage = loginPage;

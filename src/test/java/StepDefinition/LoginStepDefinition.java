@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 
 public class LoginStepDefinition {
 
-    public LoginStep loginStep;
+    private LoginStep loginStep;
 
     public LoginStepDefinition(LoginStep loginStep) {
         this.loginStep = loginStep;
