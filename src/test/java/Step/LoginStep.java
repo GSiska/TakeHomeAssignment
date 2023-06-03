@@ -1,35 +1,40 @@
 package Step;
 
+import Manager.WebDriverManager;
+import Page.HomePage;
+import Page.LoginPage;
 import dev.failsafe.internal.util.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class LoginStep {
 
-        public WebDriver driver;
+        private WebDriver driver;
+        private WebDriverManager webDriverManager;
+
+        public LoginStep() {
+            webDriverManager = new WebDriverManager();
+            driver = webDriverManager.getDriver();
+        }
+
         public void userIsAtLoginPage() {
-            driver = new ChromeDriver();
-            driver.get("https://www.saucedemo.com/");
+            LoginPage loginPage = new LoginPage(driver);
+            driver.get(loginPage.websiteLink);
         }
 
         public void userInputsValidUsernameAndPassword() {
-            WebElement username=driver.findElement(By.xpath("//input[@placeholder='Username']"));
-            username.sendKeys("standard_user");
-
-            WebElement password=driver.findElement(By.xpath("//input[@placeholder='Password']"));
-            password.sendKeys("secret_sauce");
+            LoginPage loginPage = new LoginPage(driver);
+            loginPage.inputLoginUserName();
+            loginPage.inputloginPassword();
         }
 
         public void userClicksLoginButton() {
-            WebElement login=driver.findElement(By.xpath("//input[@name='login-button']"));
-            login.click();
+            LoginPage loginPage = new LoginPage(driver);
+            loginPage.loginSubmitButton.click();
         }
 
         public void userIsAtHomepage() {
-            Assert.isTrue(driver
-                    .findElement(By.xpath("//div[@class='app_logo']"))
-                    .isDisplayed(),"app_logo not found");
+            HomePage homePage = new HomePage(driver);
+            Assert.isTrue(homePage.homepageLogoIsDisplayed(),"Homepage not found!");
         }
 }

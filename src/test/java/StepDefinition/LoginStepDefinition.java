@@ -4,18 +4,18 @@ import Step.LoginStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginStepDefinition {
 
-    private LoginStep loginStep;
-    public WebDriver driver;
+    public LoginStep loginStep;
+
+    public LoginStepDefinition(LoginStep loginStep) {
+        this.loginStep = loginStep;
+    }
 
     @Given("user is at login page")
     public void userIsAtLoginPage() {
-        driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/");;
+        loginStep.userIsAtLoginPage();
     }
 
     @When("user inputs valid username and password")
