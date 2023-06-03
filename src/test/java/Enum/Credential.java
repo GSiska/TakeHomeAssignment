@@ -1,6 +1,6 @@
 package Enum;
 
-public enum Credential{
+public enum Credential {
     USERNAME("standard_user"),
     PASSWORD("secret_sauce");
 
