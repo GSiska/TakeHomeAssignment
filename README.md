@@ -30,4 +30,21 @@ Scenario Rules
 
 1. Avoid using parameters in the steps of the scenarios. Because if this kind of step is used by many scenarios and there is a change in the parameter, we have to change all related scenarios. Instead, we can use static definitions defined in page files and call it in step files. 
 2. If different scenarios have the same steps but parameters, then we can use example as the solution. The point is we have to prevent duplicate scenarios. This is also applied to step or step definition files. Avoid different methods with the same commands.
-3. It is recommended to use relative xpath for the locators. As the position of the element changes, we do not need to change the locator.  
+3. It is recommended to use relative xpath for the locators. As the position of the element changes, we do not need to change the locator. 
+
+Step by Step to Run The Tests
+
+1. Open GitHub link https://github.com/GSiska/TakeHomeAssignment/tree/master
+2. Go to Code → SSH → copy the SSH
+3. Open Intellij
+4. File → New → Project from Version Control → paste the SSH into URL field → Clone
+5. Trust Maven Project? → Trust Project
+6.  In the Project bar → Open TakeHomeAssignment/src/test/userCredential/login.feature → Run ‘Scenario:verify user can login successfully’ (green arrow next to Scenario)
+7.  The build will show error →java: package dev.failsafe.internal.util does not exist
+8. Go to File → Project Structure → Modules → add selenium jar files –> Apply/Ok
+9. Re-run the login.feature and this error will appear
+Step failed
+java.lang.IllegalStateException: The driver executable is a directory: /home/lpt-101/Downloads/chromedriver_linux64/chromedriver
+10. Please update path of your chromedriver in method createLocalDriver() in TakeHomeAssignmentTestRunning/src/test/java/Manager/WebDriverManager.java then re-run the login.feature. Chomedriver can be downloaded from https://chromedriver.chromium.org/downloads.
+11. The test should be successful! :))
+12. There are 3 feature files: login.feature (1 scenario), ShoppingCart.feature (3 scenarios) and ProceedTransaction.feature(1 scenario). 
