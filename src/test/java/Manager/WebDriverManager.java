@@ -15,6 +15,7 @@ public class WebDriverManager {
         //Please change the path according to your chromedriver location
         System.setProperty("webdriver.chrome.driver", "/home/lpt-101/Downloads/chromedriver_linux64/chromedriver");
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         return driver;
     }
 
