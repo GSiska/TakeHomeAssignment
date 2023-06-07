@@ -20,6 +20,9 @@ public class ShoppingCartPage extends LoginPage{
     @FindBy(xpath = "//div[@class='inventory_item'][1]/div[2]/div[2]/div")
     public WebElement highestProduct;
 
+    @FindBy(xpath = "//div[@class='inventory_item'][2]/div[2]/div[2]/div")
+    public WebElement secondHighestProduct;
+
     @FindBy(xpath = "//div[@class='inventory_item'][1]/div[2]/div/a/div")
     public WebElement firstProduct;
 
@@ -45,6 +48,10 @@ public class ShoppingCartPage extends LoginPage{
 
     public String highestProductPrice() {
         return highestProduct.getText();
+    }
+
+    public String secondHighestProductPrice() {
+        return secondHighestProduct.getText();
     }
 
     public void clickOnFirstProduct() {

@@ -31,7 +31,9 @@ public class ShoppingCartStep {
     }
 
     public void theTopOfTheProductsIsTheHighestPrice() {
-        Assert.assertTrue(shoppingCartPage.highestProductPrice().equals("$49.99"),"Product is not sorted from highest price to lowest price!");
+        Integer firstHighestPriceProduct = Integer.parseInt(shoppingCartPage.highestProductPrice().substring(1,shoppingCartPage.secondHighestProductPrice().indexOf(".")));
+        Integer secondHighestPriceProduct = Integer.parseInt(shoppingCartPage.secondHighestProductPrice().substring(1,shoppingCartPage.secondHighestProductPrice().indexOf(".")));
+        Assert.assertTrue(firstHighestPriceProduct > secondHighestPriceProduct,"Product is not sorted from highest price to lowest price!");
     }
 
     public void userSelectsTheFirstProduct() {
