@@ -48,3 +48,4 @@ java.lang.IllegalStateException: The driver executable is a directory: /home/lpt
 10. Please update path of your chromedriver in method createLocalDriver() in TakeHomeAssignmentTestRunning/src/test/java/Manager/WebDriverManager.java then re-run the login.feature. Chomedriver can be downloaded from https://chromedriver.chromium.org/downloads.
 11. The test should be successful! :))
 12. There are 3 feature files: login.feature (1 scenario), ShoppingCart.feature (3 scenarios) and ProceedTransaction.feature(1 scenario). 
+13. You can also run TakeHomeAssignment/src/test/java/Runner/Run.feature to produce cucumber report.
