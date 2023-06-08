@@ -7,7 +7,7 @@ Project Setup
 
 Project Structure 
 
-Files consist of features files, step definition files, step files, page files, driver file and runner (optional). Since we use Picocontainer Dependency Injection, we share cucumber features to multiple step definition or step classes.
+Files consist of features files, step definition files, step files, page files, driver file, runner (optional) and hooks file. Since we use Picocontainer Dependency Injection, we share cucumber features to multiple step definition or step classes.
 1. Feature Files
 This files contain all scenarios in gherkin language (Given, When, Then).
 2. Step Definition Files
@@ -24,7 +24,9 @@ public class OtherPage extends BasePage {
 5. Driver File
 There file contains driver initialization or getting driver reference. In this case, we use chrome driver. 
 6. Runner File
-This file is for managing the tests running. We need to add plugins Create TestNG XML to produce this  file. 
+This file is for managing the tests running. We need to add plugins Create TestNG XML to produce this  file. Glue Option helps cucumber to locate the step definition files.It specify the package to load glue code (step definitions or hooks) in the glue option.
+7. Hooks File
+This file contains method to run after scenario by adding annotation @After. In this program, I added screenshot method to attach page screenshot at the of every scenario. 
 
 Scenario Rules
 
@@ -48,4 +50,4 @@ java.lang.IllegalStateException: The driver executable is a directory: /home/lpt
 10. Please update path of your chromedriver in method createLocalDriver() in TakeHomeAssignmentTestRunning/src/test/java/Manager/WebDriverManager.java then re-run the login.feature. Chomedriver can be downloaded from https://chromedriver.chromium.org/downloads.
 11. The test should be successful! :))
 12. There are 3 feature files: login.feature (1 scenario), ShoppingCart.feature (3 scenarios) and ProceedTransaction.feature(1 scenario). 
-13. You can also run TakeHomeAssignment/src/test/java/Runner/Run.feature to produce cucumber report.
+13. You can also run TakeHomeAssignmentTestRunning/src/test/java/Runner/Run.feature to produce cucumber report. The cucumber report is in your local path TakeHomeAssignmentTestRunning/target/cucumber-reports.html. 
