@@ -1,13 +1,15 @@
 package StepDefinition;
 
+import Page.Base;
 import Step.ProceedTransactionStep;
-import Step.ShoppingCartStep;
-import io.cucumber.java.en.Given;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
-public class ProceedTransactionStepDefinition {
+public class ProceedTransactionStepDefinition extends Base {
 
     private ProceedTransactionStep proceedTransactionStep;
 
@@ -29,4 +31,6 @@ public class ProceedTransactionStepDefinition {
     public void userIsAtOrderVerificationPage() {
         proceedTransactionStep.userIsAtOrderVerificationPage();
     }
+
+
 }

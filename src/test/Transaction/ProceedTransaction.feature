@@ -1,4 +1,4 @@
-Feature: ShoppingCartFeature
+Feature: ProceedTransactionFeature
   This feature deals with the functionality of proceeding transaction
 
   Scenario: verify user can proceed transaction

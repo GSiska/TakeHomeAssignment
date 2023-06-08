@@ -12,7 +12,7 @@ import org.picocontainer.behaviors.FieldDecorated;
 import java.lang.reflect.Field;
 import java.util.concurrent.TimeUnit;
 
-public class LoginPage {
+public class LoginPage extends Base{
 
     WebDriverManager webDriverManager;
 
@@ -23,6 +23,7 @@ public class LoginPage {
 
     private void initElement() {
         PageFactory.initElements(getDriver(), this);
+        driver = getDriver();
     }
 
     protected WebDriver getDriver() {

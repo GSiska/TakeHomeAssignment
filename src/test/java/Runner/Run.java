@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/Transaction/ProceedTransaction.feature",
+        features = "src/test",
         glue = {"StepDefinition"},
         plugin = {"pretty","html:target/cucumber-reports.html"}
 )

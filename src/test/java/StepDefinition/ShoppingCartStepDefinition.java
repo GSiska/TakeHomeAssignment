@@ -1,5 +1,6 @@
 package StepDefinition;
 
+import Page.Base;
 import Step.ShoppingCartStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,7 +10,8 @@ public class ShoppingCartStepDefinition {
 
     private ShoppingCartStep shoppingCartStep;
 
-    public ShoppingCartStepDefinition(ShoppingCartStep shoppingCartStep) {
+    public ShoppingCartStepDefinition(ShoppingCartStep shoppingCartStep)
+    {
         this.shoppingCartStep = shoppingCartStep;
     }
 
@@ -47,4 +49,5 @@ public class ShoppingCartStepDefinition {
     public void removeButtonAppears() {
         shoppingCartStep.removeButtonAppears();
     }
+
 }
